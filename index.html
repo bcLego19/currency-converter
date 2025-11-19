@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dockerized Currency Splitter</title>
+    <!-- Importing Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center font-sans">
+
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full">
+        <div class="flex items-center gap-3 mb-6">
+            <i class="fa-solid fa-wallet text-blue-600 text-3xl"></i>
+            <h1 class="text-2xl font-bold text-gray-800">Budget Splitter & Converter</h1>
+        </div>
+
+        <!-- SECTION 1: Initial Setup -->
+        <div class="bg-blue-50 p-4 rounded-md border border-blue-200 mb-6">
+            <label class="block text-sm font-semibold text-gray-700 mb-2">Total Budget (USD)</label>
+            <input type="number" id="totalBudgetInput" value="100" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <p class="text-xs text-gray-500 mt-1">Enter your total available funds here.</p>
+        </div>
+
+        <!-- SECTION 2: The Splitter Interface -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Amount to Allocate</label>
+                <input type="number" id="allocationAmount" placeholder="e.g. 30" class="w-full p-2 border border-gray-300 rounded">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Target Currency</label>
+                <select id="targetCurrency" class="w-full p-2 border border-gray-300 rounded bg-white">
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="JPY">JPY - Japanese Yen</option>
+                    <option value="GBP">GBP - British Pound</option>
+                    <option value="INR">INR - Indian Rupee</option>
+                    <option value="CAD">CAD - Canadian Dollar</option>
+                </select>
+            </div>
+        </div>
+
+        <button id="addSplitBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-200">
+            <i class="fa-solid fa-plus mr-2"></i> Add Split
+        </button>
+
+        <div id="errorMessage" class="text-red-500 text-sm mt-2 hidden font-semibold"></div>
+
+        <!-- SECTION 3: Visualizing the Data -->
+        <div class="mt-8">
+            <h3 class="text-lg font-bold text-gray-800 mb-3">Allocations</h3>
+            
+            <!-- Progress Bar Container -->
+            <div class="w-full bg-gray-200 rounded-full h-4 mb-4 overflow-hidden">
+                <div id="progressBar" class="bg-green-500 h-4 rounded-full transition-all duration-500" style="width: 0%"></div>
+            </div>
+
+            <div class="flex justify-between text-sm font-semibold mb-4">
+                <span>Allocated: $<span id="totalAllocatedDisplay">0.00</span></span>
+                <span class="text-blue-600">Remaining: $<span id="remainingDisplay">100.00</span></span>
+            </div>
+
+            <!-- List of splits goes here -->
+            <ul id="allocationList" class="space-y-2">
+                <!-- Items will be injected here by JavaScript -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+</body>
+</html>
