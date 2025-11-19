@@ -1,0 +1,18 @@
+# .gitignore file
+# system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# data logs
+.log
+npm-debug.log
+
+# docker local files catch
+*.tar
+*.tar.gz
+
+# node modules (future proofing)
+node_modules/
+dist/
+build/
