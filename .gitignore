@@ -21,7 +21,8 @@ build/
 
 # Other Ignore Items:
 # Python
-pycache/*.pyc
+__pycache__/
+*.pyc
 
 # Virtual Environments
 venv/
